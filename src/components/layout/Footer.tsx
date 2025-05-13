@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, ExternalLink } from 'lucide-react';
+import { Github, Linkedin, Mail } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -22,8 +22,8 @@ const Footer = () => {
           <div className="flex flex-col items-center md:items-end">
             <div className="flex space-x-4 mb-4">
               <a 
-                href="https://github.com/youssefouriniche"
-                target="_blank"
+                href="https://github.com/youceyf11"
+                target="https://github.com/youceyf11"
                 rel="noopener noreferrer"
                 className="p-2 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                 aria-label="GitHub"
@@ -31,8 +31,8 @@ const Footer = () => {
                 <Github size={20} />
               </a>
               <a 
-                href="https://linkedin.com/in/youssefouriniche"
-                target="_blank"
+                href="https://www.linkedin.com/in/youssef-ouriniche-7bb91a279/"
+                target="https://www.linkedin.com/in/youssef-ouriniche-7bb91a279/"
                 rel="noopener noreferrer"
                 className="p-2 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                 aria-label="LinkedIn"
@@ -40,20 +40,11 @@ const Footer = () => {
                 <Linkedin size={20} />
               </a>
               <a 
-                href="mailto:youssef@example.com"
+                href="mailto:youceyfouriniche11@example.com"
                 className="p-2 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                 aria-label="Email"
               >
                 <Mail size={20} />
-              </a>
-              <a 
-                href="https://instagram.com/youssefouriniche"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-                aria-label="Instagram"
-              >
-                <ExternalLink size={20} />
               </a>
             </div>
             <a 

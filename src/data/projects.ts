@@ -14,7 +14,7 @@ export const projectsData: Project[] = [
     description: 'Le site a été créé pour simplifier l’enlèvement d’épaves et le rachat de véhicules en France. Il permet de faire une demande en ligne, recevoir un devis gratuit, et planifier une intervention rapide avec une équipe professionnelle.\n' +
         '\n',
     image: "/images/car.jpg",
-    technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'Stripe'],
+    technologies: ['WordPress'],
     demo: 'https://lesepavistespro.com/',
   },
   {
@@ -22,7 +22,7 @@ export const projectsData: Project[] = [
     title: 'HEVEA',
     description: 'A collaborative task management application with real-time updates, team workspaces, and progress tracking.',
     image: '/images/eva.jpg',
-    technologies: ['Angular', 'TypeScript', 'Firebase', 'Material UI'],
+    technologies: ['WordPress'],
     demo: 'https://hevea.ma/',
 
   },
@@ -39,7 +39,7 @@ export const projectsData: Project[] = [
   {
     id: 4,
     title: 'Celtic Salt',
-    description: '',
+    description: 'Built with care to highlight products, uses, and the purity of salt through a clean, minimal design and smooth user experience.',
     image: '/images/salt.jpg',
     technologies: ['WordPress'],
     demo: 'https://www.celtic-salt.com/',
