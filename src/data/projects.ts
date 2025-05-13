@@ -13,7 +13,7 @@ export const projectsData: Project[] = [
     title: 'Les Épavistes Pro',
     description: 'Le site a été créé pour simplifier l’enlèvement d’épaves et le rachat de véhicules en France. Il permet de faire une demande en ligne, recevoir un devis gratuit, et planifier une intervention rapide avec une équipe professionnelle.\n' +
         '\n',
-    image: "public/images/car.jpg",
+    image: "/images/car.jpg",
     technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'Stripe'],
     demo: 'https://lesepavistespro.com/',
   },
@@ -21,7 +21,7 @@ export const projectsData: Project[] = [
     id: 2,
     title: 'HEVEA',
     description: 'A collaborative task management application with real-time updates, team workspaces, and progress tracking.',
-    image: 'public/images/eva.jpg',
+    image: '/images/eva.jpg',
     technologies: ['Angular', 'TypeScript', 'Firebase', 'Material UI'],
     demo: 'https://hevea.ma/',
 
@@ -31,8 +31,8 @@ export const projectsData: Project[] = [
     title: 'Be Flower',
     description: 'We create elegant floral arrangements for every occasion — from romantic gestures to joyful celebrations. Each flower is handpicked with care to bring color, fragrance, and happiness to your special moments.\n' +
         '\n',
-    image: 'public/images/beflower.jpg',
-    technologies: ['React Native', 'Redux', 'Node.js', 'Express', 'MongoDB'],
+    image: '/images/beflower.jpg',
+    technologies: ['WordPress'],
     demo: 'https://rosybrown-bee-412182.hostingersite.com/',
 
   },
@@ -40,9 +40,18 @@ export const projectsData: Project[] = [
     id: 4,
     title: 'Para Health And beauty',
     description: '',
-    image: 'public/images/paraandhealt.jpg',
-    technologies: ['JavaScript', 'HTML', 'CSS', 'OpenWeather API'],
+    image: '/images/paraandhealt.jpg',
+    technologies: ['WordPress'],
     demo: 'https://phb.ma/',
+
+  },
+  {
+    id: 4,
+    title: 'Celtic Salt',
+    description: '',
+    image: '/images/salt.jpg',
+    technologies: ['WordPress'],
+    demo: 'https://www.celtic-salt.com/',
 
   },
   {
@@ -60,6 +69,5 @@ export const projectsData: Project[] = [
     image: 'https://images.pexels.com/photos/3194519/pexels-photo-3194519.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
     technologies: ['React', 'Redux', 'Node.js', 'Express', 'Social Media APIs'],
     demo: 'https://social-dashboard-demo.example.com',
-
   },
 ];
