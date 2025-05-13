@@ -38,15 +38,6 @@ export const projectsData: Project[] = [
   },
   {
     id: 4,
-    title: 'Para Health And beauty',
-    description: '',
-    image: '/images/paraandhealt.jpg',
-    technologies: ['WordPress'],
-    demo: 'https://phb.ma/',
-
-  },
-  {
-    id: 4,
     title: 'Celtic Salt',
     description: '',
     image: '/images/salt.jpg',

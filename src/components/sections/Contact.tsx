@@ -1,5 +1,10 @@
 import { useState } from 'react';
-import { Send, Mail, Phone, MapPin, Linkedin, Github, ExternalLink } from 'lucide-react';
+import { Send, Mail, Phone, MapPin, Linkedin, Github } from 'lucide-react';
+import emailjs from 'emailjs-com';
+
+const SERVICE_ID = 'service_w4jwdj9';
+const TEMPLATE_ID = 'template_nk1qnip';
+const USER_ID = 'DyrusEliWj0rpWAdf';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -8,7 +13,7 @@ const Contact = () => {
     subject: '',
     message: ''
   });
-  
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<null | 'success' | 'error'>(null);
 
@@ -20,25 +25,34 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
+
+    emailjs.send(
+      SERVICE_ID,
+      TEMPLATE_ID,
+      {
+        name: formData.name,
+        email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+      },
+      USER_ID
+    )
+    .then(() => {
       setIsSubmitting(false);
       setSubmitStatus('success');
-      
-      // Reset form after successful submission
       setFormData({
         name: '',
         email: '',
         subject: '',
         message: ''
       });
-      
-      // Reset success message after 5 seconds
-      setTimeout(() => {
-        setSubmitStatus(null);
-      }, 5000);
-    }, 1500);
+      setTimeout(() => setSubmitStatus(null), 5000);
+    })
+    .catch(() => {
+      setIsSubmitting(false);
+      setSubmitStatus('error');
+      setTimeout(() => setSubmitStatus(null), 5000);
+    });
   };
 
   return (
@@ -56,7 +70,7 @@ const Contact = () => {
           <div className="w-full lg:w-5/12">
             <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 md:p-8 h-full border border-gray-100 dark:border-gray-700">
               <h3 className="text-2xl font-bold mb-6 bg-gradient-to-r from-blue-500 to-emerald-500 bg-clip-text text-transparent">Contact Information</h3>
-              
+
               <div className="space-y-6 mb-8">
                 <div className="flex items-start">
                   <div className="bg-blue-100 dark:bg-blue-900/30 p-3 rounded-lg mr-4">
@@ -64,12 +78,12 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-medium mb-1">Email</h4>
-                    <a href="mailto:Youssef.Ouriniche@emsi-edu.ma" className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                      Youssef.Ouriniche@emsi-edu.ma
+                    <a href="mailto:youceyfouriniche11@gmail.com" className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                      youceyfouriniche11@gmail.com
                     </a>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start">
                   <div className="bg-blue-100 dark:bg-blue-900/30 p-3 rounded-lg mr-4">
                     <Phone className="text-blue-600 dark:text-blue-400 w-5 h-5" />
@@ -81,7 +95,7 @@ const Contact = () => {
                     </a>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start">
                   <div className="bg-blue-100 dark:bg-blue-900/30 p-3 rounded-lg mr-4">
                     <MapPin className="text-blue-600 dark:text-blue-400 w-5 h-5" />
@@ -94,7 +108,7 @@ const Contact = () => {
                   </div>
                 </div>
               </div>
-              
+
               <div>
                 <h4 className="font-medium mb-4">Connect With Me</h4>
                 <div className="flex gap-4">
@@ -106,7 +120,7 @@ const Contact = () => {
                   >
                     <Github className="w-5 h-5 text-gray-700 dark:text-gray-300 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors" />
                   </a>
-                  
+
                   <a
                     href="https://www.linkedin.com/in/youssef-ouriniche-7bb91a279/"
                     target="https://www.linkedin.com/in/youssef-ouriniche-7bb91a279/"
@@ -115,37 +129,29 @@ const Contact = () => {
                   >
                     <Linkedin className="w-5 h-5 text-gray-700 dark:text-gray-300 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors" />
                   </a>
-                  
-                  <a
-                    href="https://instagram.com/youceyf"
-                    target="youceyf11"
-                    rel="noopener noreferrer"
-                    className="bg-gray-100 dark:bg-gray-700 hover:bg-blue-100 dark:hover:bg-blue-900/30 p-3 rounded-lg transition-colors group"
-                  >
-                    <ExternalLink className="w-5 h-5 text-gray-700 dark:text-gray-300 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors" />
-                  </a>
+
                 </div>
               </div>
             </div>
           </div>
-          
+
           {/* Contact Form */}
           <div className="w-full lg:w-7/12">
             <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 md:p-8 border border-gray-100 dark:border-gray-700">
               <h3 className="text-2xl font-bold mb-6">Send Me a Message</h3>
-              
+
               {submitStatus === 'success' && (
                 <div className="mb-6 p-4 bg-green-100 dark:bg-green-900/30 border border-green-200 dark:border-green-800 rounded-lg text-green-800 dark:text-green-300">
                   Thank you for your message! I'll get back to you as soon as possible.
                 </div>
               )}
-              
+
               {submitStatus === 'error' && (
                 <div className="mb-6 p-4 bg-red-100 dark:bg-red-900/30 border border-red-200 dark:border-red-800 rounded-lg text-red-800 dark:text-red-300">
                   There was a problem sending your message. Please try again later.
                 </div>
               )}
-              
+
               <form onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                   <div>
@@ -162,7 +168,7 @@ const Contact = () => {
                       required
                     />
                   </div>
-                  
+
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                       Your Email
@@ -178,7 +184,7 @@ const Contact = () => {
                     />
                   </div>
                 </div>
-                
+
                 <div className="mb-6">
                   <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                     Subject
@@ -193,7 +199,7 @@ const Contact = () => {
                     required
                   />
                 </div>
-                
+
                 <div className="mb-6">
                   <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                     Message
@@ -208,7 +214,7 @@ const Contact = () => {
                     required
                   ></textarea>
                 </div>
-                
+
                 <button
                   type="submit"
                   disabled={isSubmitting}
